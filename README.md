@@ -48,7 +48,7 @@ pip install -r requirements.txt
 #### 4.运行`generate_city.py`生成每个省份的城市的json文件`city.json`
 
 ```bash
-python main.py
+python generate_city.py
 ```
 
 #### 5.运行`create_file.py`根据`city.json`数据生成每个省份的城市的文件夹
