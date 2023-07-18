@@ -8,7 +8,7 @@ pageSize = 20
 is_proxy = False
 
 # 是否启动随机UA
-is_fake_user_agent = True
+is_fake_user_agent = False
 
 # 是否启动验证ssl
 is_verify = False
