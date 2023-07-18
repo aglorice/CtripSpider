@@ -140,6 +140,8 @@ MAX_PAGE = 300
 ```
 ### 运行示例
 ![](img/img.png)
+#### excel文件
+![](img/img_1.png)
 
 ## 4️⃣注意事项
 
