@@ -6,7 +6,7 @@
 # @File :  get_province_all_scene.py
 import time
 
-from config import CITY_SLEEP_TIME, SCENE_SLEEP_TIME, is_over
+from config import CITY_SLEEP_TIME, SCENE_SLEEP_TIME, IS_OVER
 from utils.generate_excel import generate_excel
 from utils.utils import get_is_exist
 from xiecehng.get_comments_pool import get_comments_pool
@@ -26,7 +26,7 @@ def get_province_all_scene(xc: XieCheng, console: Console) -> None:
             # 爬取景区的评论
             for _item in range(len(xc.scene_list)):
                 # 先检测是否已经有景区的评论数据的excel表格，如果有则跳过
-                if not is_over and get_is_exist(xc.scene_list[_item]["name"], item["name"], province_name):
+                if not IS_OVER and get_is_exist(xc.scene_list[_item]["name"], item["name"], province_name):
                     console.print(f"[yellow]已经爬取过{xc.scene_list[_item]['name']}的评论数据,[/yellow]", style="bold")
                     continue
                 comment = get_comments_pool(xc, console, _item)

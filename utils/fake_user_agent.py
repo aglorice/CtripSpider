@@ -6,19 +6,19 @@
 # @File :  fake_user_agent.py
 from fake_useragent import UserAgent
 import random
-from config import is_fake_user_agent
+from config import IS_FAKE_USER_AGENT
 
 
 def get_fake_user_agent(ua: str, default=True) -> str:
     match ua:
         case "mobile":
-            if is_fake_user_agent and default:
+            if IS_FAKE_USER_AGENT and default:
                 ua = get_mobile_user_agent()
                 return ua
             else:
                 return "Mozilla/5.0 (Linux; Android 8.0.0; SM-G955U Build/R16NW) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Mobile Safari/537.36 Edg/114.0.0.0"
         case "pc":
-            if is_fake_user_agent and default:
+            if IS_FAKE_USER_AGENT and default:
                 ua = UserAgent()
                 return ua.random
             else:

@@ -42,7 +42,6 @@ def get_all_excel_file_data():
     path = os.path.join(path, "city.json")
     all_province_city = jsonFileToDate(path)
     comment_total = 0
-    province_comment_total = 0
 
     scene_total = 0
     scene_fail_total = 0

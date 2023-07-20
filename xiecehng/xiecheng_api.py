@@ -18,7 +18,7 @@ from bs4 import BeautifulSoup
 from rich.console import Console
 from urllib3.exceptions import InsecureRequestWarning, InsecurePlatformWarning
 
-from config import is_verify, TIME_OUT
+from config import IS_VERIFY, TIME_OUT
 from utils.fake_user_agent import get_fake_user_agent
 from utils.proxy import my_get_proxy
 from utils.utils import create_file, jsonFileToDate, dateToJsonFileSceneInfo
@@ -44,7 +44,7 @@ class XieCheng:
         self.scene_list = []
         self.sees = requests.session()
         self.console = console
-        self.sees.verify = is_verify
+        self.sees.verify = IS_VERIFY
         self.get_home()
 
     def get_home(self):
@@ -89,9 +89,9 @@ class XieCheng:
     def get_city_scene(self, city_name, city_url: str) -> list:
         """
         获取城市热门景区信息
-        :param city_name:
-        :param city_url:
-        :return:
+        :param city_name: 城市名称
+        :param city_url: 城市对应在携程的主页yrl
+        :return: 该城市的热门景区信息
         """
         self.console.rule(f"[green]正在获取[yellow]{city_name}[/yellow]的景区信息[/green]", characters="*")
         scene_list = []
@@ -137,10 +137,10 @@ class XieCheng:
     def get_city_scene_info(self, city_scene_name, city_scene_url: str, province: str, city: str) -> None:
         """
         获取景区的id
-        :param city:
-        :param province:
-        :param city_scene_name: 城市名称
-        :param city_scene_url: 城市url
+        :param city:城市
+        :param province: 省份
+        :param city_scene_name: 景点的名称
+        :param city_scene_url: 景点对应在携程的主页yrl
         :return:
         """
         pattern_businessId = r'/(\d+)\.html$'

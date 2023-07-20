@@ -6,12 +6,19 @@
 # @File :  get_comments_pool.py
 from rich.console import Console
 
-from config import pageSize, POOL_NUMBER, MAX_PAGE
+from config import PAGESIZE, POOL_NUMBER, MAX_PAGE
 from xiecehng.xiecheng_api import XieCheng
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
 def get_comments_pool(xc: XieCheng, console: Console, _index: int) -> list:
+    """
+    使用线程池获取景区评论数据
+    :param xc: XieCheng类的实例
+    :param console: 控制台输出
+    :param _index: 景区列表的索引
+    :return: 评论数据列表
+    """
     comments_list = []
     threadPool = ThreadPoolExecutor(max_workers=POOL_NUMBER)
     thread_list = []
@@ -28,7 +35,7 @@ def get_comments_pool(xc: XieCheng, console: Console, _index: int) -> list:
     console.print(f"正在爬取[yellow]{xc.scene_list[_index]['name']}[/yellow]的评论数据，预计爬取{comment_total}页的数据", style="bold green")
     try:
         for index in range(1, comment_total):
-            thread = threadPool.submit(xc.get_scene_comments, xc.scene_list[_index]["resourceId"], index, pageSize)
+            thread = threadPool.submit(xc.get_scene_comments, xc.scene_list[_index]["resourceId"], index, PAGESIZE)
             thread_list.append(thread)
 
         for mission in as_completed(thread_list):

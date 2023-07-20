@@ -6,7 +6,7 @@
 # @File :  proxy.py
 import requests
 
-from config import is_proxy
+from config import IS_PROXY
 
 
 def get_proxy():
@@ -20,7 +20,7 @@ def delete_proxy(proxy):
 # your spider code
 
 def my_get_proxy() -> dict:
-    if is_proxy:
+    if IS_PROXY:
         content = get_proxy()
         proxy = content.get("proxy")
         _proxy = {"http": "http://{}".format(proxy),"https": "http://{}".format(proxy)}
