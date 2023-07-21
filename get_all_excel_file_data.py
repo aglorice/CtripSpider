@@ -18,7 +18,7 @@ console = Console(width=150)
 
 def get_city_scene(province_name: str, city_name: str) -> list:
     path = os.path.dirname(os.path.abspath(__file__))
-    path = os.path.join(path, "../scenic_spots_comment/data", province_name, city_name)
+    path = os.path.join(path, "..\\CtripSpider\\data", province_name, city_name)
     files = os.listdir(path)
     scene_list = []
     for file_name in files:
