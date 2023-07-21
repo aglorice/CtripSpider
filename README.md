@@ -62,6 +62,11 @@ python create_file.py
 ```bash
 python main.py
 ```
+#### 7.如果需要统计你爬的数据有多少，请运行`get_all_excel_file_data.py`
+
+```bash
+python get_all_excel_file_data.py
+```
 
 ### 🐞🐞🐞经过尝试，携程是有反爬的,建议使用代理池，本项目使用[proxy_pool](https://github.com/jhao104/proxy_pool)
 
