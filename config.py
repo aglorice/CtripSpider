@@ -11,7 +11,7 @@ MAX_PAGE = 300
 IS_PROXY = False
 
 # 是否启动随机UA
-IS_FAKE_USER_AGENT = False
+IS_FAKE_USER_AGENT = True
 
 # 是否启动验证ssl
 IS_VERIFY = False
