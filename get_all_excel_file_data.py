@@ -30,7 +30,7 @@ def get_city_scene(province_name: str, city_name: str) -> list:
 
 
 def read_excel_to_data(path: str, scene_name: str) -> list:
-    _path = os.path.join(path, f"{scene_name}.xls")
+    _path = os.path.join(path, f"{scene_name}.xlsx")
     if not os.path.exists(_path):
         return []
     data = pd.read_excel(_path).to_dict(orient='records')
