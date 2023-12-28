@@ -1,87 +1,11 @@
 {
   "city": [
     {
-      "name": "四川",
+      "name": "云南",
       "city": [
         {
-          "name": "成都",
-          "url": "https://you.ctrip.com/place/chengdu104.html"
-        },
-        {
-          "name": "九寨沟",
-          "url": "https://you.ctrip.com/place/jiuzhaigou25.html"
-        },
-        {
-          "name": "都江堰",
-          "url": "https://you.ctrip.com/place/dujiangyan911.html"
-        },
-        {
-          "name": "绵阳",
-          "url": "https://you.ctrip.com/place/mianyang915.html"
-        },
-        {
-          "name": "西昌",
-          "url": "https://you.ctrip.com/place/xichang592.html"
-        },
-        {
-          "name": "乐山",
-          "url": "https://you.ctrip.com/place/leshan103.html"
-        },
-        {
-          "name": "阿坝藏族羌族自治州",
-          "url": "https://you.ctrip.com/place/abaprefecture744.html"
-        },
-        {
-          "name": "康定",
-          "url": "https://you.ctrip.com/place/kangding344.html"
-        },
-        {
-          "name": "宜宾",
-          "url": "https://you.ctrip.com/place/yibin278.html"
-        },
-        {
-          "name": "小金",
-          "url": "https://you.ctrip.com/place/xiaojin3110.html"
-        },
-        {
-          "name": "稻城",
-          "url": "https://you.ctrip.com/place/daocheng342.html"
-        },
-        {
-          "name": "南充",
-          "url": "https://you.ctrip.com/place/nanchong782.html"
-        },
-        {
-          "name": "达州",
-          "url": "https://you.ctrip.com/place/dazhou910.html"
-        },
-        {
-          "name": "峨眉山",
-          "url": "https://you.ctrip.com/place/emeishan24.html"
-        },
-        {
-          "name": "广元",
-          "url": "https://you.ctrip.com/place/guangyuan593.html"
-        },
-        {
-          "name": "泸州",
-          "url": "https://you.ctrip.com/place/luzhou604.html"
-        },
-        {
-          "name": "简阳",
-          "url": "https://you.ctrip.com/place/jianyang3122.html"
-        },
-        {
-          "name": "雅安",
-          "url": "https://you.ctrip.com/place/yaan917.html"
-        },
-        {
-          "name": "眉山",
-          "url": "https://you.ctrip.com/place/meishan914.html"
-        },
-        {
-          "name": "自贡",
-          "url": "https://you.ctrip.com/place/zigong575.html"
+          "name": "昆明",
+          "url": "https://you.ctrip.com/place/kunming29.html"
         }
       ]
     }

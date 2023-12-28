@@ -1,6 +1,6 @@
 from config import AREAS
 from utils.utils import dateToJsonFile, create_file
-from xiecehng.xiecheng_api import XieCheng
+from xiecheng.xiecheng_api import XieCheng
 from rich.console import Console
 
 if __name__ == '__main__':

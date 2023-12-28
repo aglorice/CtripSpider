@@ -9,8 +9,8 @@ import time
 from config import CITY_SLEEP_TIME, SCENE_SLEEP_TIME, IS_OVER
 from utils.generate_excel import generate_excel
 from utils.utils import get_is_exist
-from xiecehng.get_comments_pool import get_comments_pool
-from xiecehng.xiecheng_api import XieCheng
+from xiecheng.get_comments_pool import get_comments_pool
+from xiecheng.xiecheng_api import XieCheng
 from rich.console import Console
 
 

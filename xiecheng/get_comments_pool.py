@@ -7,7 +7,7 @@
 from rich.console import Console
 
 from config import PAGESIZE, POOL_NUMBER, MAX_PAGE
-from xiecehng.xiecheng_api import XieCheng
+from xiecheng.xiecheng_api import XieCheng
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
