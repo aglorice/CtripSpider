@@ -66,5 +66,5 @@ def get_is_exist(scene_name: str, city_name: str, province: str) -> bool:
     script_path = os.path.abspath(__file__)
     grandparent_dir = os.path.dirname(os.path.dirname(script_path))
 
-    path = os.path.join(grandparent_dir, "data", province, city_name,scene_name, f"{scene_name}.xls")
+    path = os.path.join(grandparent_dir, "data", province, city_name,scene_name, f"{scene_name}.xlsx")
     return os.path.exists(path)
