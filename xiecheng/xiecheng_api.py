@@ -1,9 +1,3 @@
-# -*- coding = utf-8 -*-
-# @Time :2023/7/9 19:40
-# @Author :小岳
-# @Email  :401208941@qq.com
-# @PROJECT_NAME :scenic_spots_comment
-# @File :  xiecheng_api.py
 import json
 import math
 import os
@@ -108,10 +102,10 @@ class XieCheng:
             self.console.print(f"[red]获取城市景区信息失败，{e},你可以检查你的网路或者代理。", style="bold red")
             return scene_list
         res_shop = BeautifulSoup(res.text, "lxml")
-        city_scene = res_shop.find_all("a", attrs={"class": "mod-silderlist__item"})
+        city_scene = res_shop.find_all("a", attrs={"class": "guide-main-item"})
         for item in city_scene:
             try:
-                city_scene_name = item.find("div", attrs={"class": "c-sildertext__title--text"})
+                city_scene_name = item.find("p", attrs={"class": "title"})
                 if city_scene_name is None:
                     continue
                 city_scene_name = city_scene_name.string
