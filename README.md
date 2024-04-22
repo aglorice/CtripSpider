@@ -10,7 +10,7 @@
 ![contributors](https://badgen.net/github/contributors/aglorice/CtripSpider)
 ![prs](https://badgen.net/github/prs/aglorice/CtripSpider)
 
-**具体实现过程请看**[携程热门景区评论爬取过程](https://aglorice.cn/posts/Technology/2)
+**具体实现过程请看**[携程热门景区评论爬取过程](https://aglorice.xlog.app/xie-cheng-re-men-jing-qu-ping-lun-pa-qu-md)
 ## 1️⃣实现方法
 
 - 通过获取携程首页每个省的数据获取每个省的城市，当然如果没有你也可在`city.json`添加或者删除城市。
