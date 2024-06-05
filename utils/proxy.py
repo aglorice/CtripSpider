@@ -22,6 +22,8 @@ def delete_proxy(proxy):
 def my_get_proxy() -> dict:
     if IS_PROXY:
         content = get_proxy()
+        while not content.get("https"):
+            content = get_proxy()
         proxy = content.get("proxy")
         _proxy = {"http": "http://{}".format(proxy),"https": "http://{}".format(proxy)}
         return _proxy
