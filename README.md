@@ -74,7 +74,7 @@ python get_all_excel_file_data.py
 `config.py`
 
 ```python
-# 爬取指定身份内的所有地区景点的评论数据
+# 爬取指定省份内的所有地区景点的评论数据
 AREAS = ['四川']
 
 # 爬取评论时每页的数据
