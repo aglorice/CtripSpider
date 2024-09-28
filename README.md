@@ -111,6 +111,7 @@ TIME_OUT = 5
 ```
 
 `city.json`
+> 如果运行`generate_city.py` 没有获取到你需要的城市，你也可以选择手动添加,只需要符合格式即可。
 
 ```json
 {

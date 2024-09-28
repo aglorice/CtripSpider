@@ -4,8 +4,76 @@
       "name": "云南",
       "city": [
         {
+          "name": "大理市",
+          "url": "https://you.ctrip.com/place/dali1445616.html"
+        },
+        {
           "name": "昆明",
           "url": "https://you.ctrip.com/place/kunming29.html"
+        },
+        {
+          "name": "丽江",
+          "url": "https://you.ctrip.com/place/lijiang32.html"
+        },
+        {
+          "name": "西双版纳",
+          "url": "https://you.ctrip.com/place/xishuangbanna30.html"
+        },
+        {
+          "name": "洱海",
+          "url": "https://you.ctrip.com/place/erhai2020651.html"
+        },
+        {
+          "name": "腾冲",
+          "url": "https://you.ctrip.com/place/tengchong696.html"
+        },
+        {
+          "name": "香格里拉",
+          "url": "https://you.ctrip.com/place/shangri-la106.html"
+        },
+        {
+          "name": "和顺古镇",
+          "url": "https://you.ctrip.com/place/heshunancienttown2142005.html"
+        },
+        {
+          "name": "抚仙湖",
+          "url": "https://you.ctrip.com/place/fuxianlake2080.html"
+        },
+        {
+          "name": "普者黑风景区",
+          "url": "https://you.ctrip.com/place/oengzliuhdozluegcanghngw120055.html"
+        },
+        {
+          "name": "梅里雪山",
+          "url": "https://you.ctrip.com/place/meilisnowmountain1143.html"
+        },
+        {
+          "name": "沙溪古镇",
+          "url": "https://you.ctrip.com/place/shaxitown2025134.html"
+        },
+        {
+          "name": "雨崩村",
+          "url": "https://you.ctrip.com/place/yubengvillage2140858.html"
+        },
+        {
+          "name": "香格里拉巴拉格宗景区",
+          "url": "https://you.ctrip.com/place/balogzonshangri-la2149912.html"
+        },
+        {
+          "name": "建水",
+          "url": "https://you.ctrip.com/place/jianshui2151.html"
+        },
+        {
+          "name": "九乡",
+          "url": "https://you.ctrip.com/place/jiuxiang120052.html"
+        },
+        {
+          "name": "普洱",
+          "url": "https://you.ctrip.com/place/puer928.html"
+        },
+        {
+          "name": "景洪",
+          "url": "https://you.ctrip.com/place/jinghong2154.html"
         }
       ]
     }
