@@ -8,6 +8,7 @@ from xiecheng.get_comments_pool import get_comments_pool
 from xiecheng.get_province_all_scene import get_province_all_scene
 from xiecheng.xiecheng_api import XieCheng
 
+
 # 设置控制台的宽度
 console = Console(width=150)
 
