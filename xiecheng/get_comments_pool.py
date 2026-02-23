@@ -21,7 +21,7 @@ def get_comments_pool(xc: XieCheng, console: Console, _index: int) -> list:
     """
     comments_list = []
     threadPool = ThreadPoolExecutor(max_workers=POOL_NUMBER)
-    thread_list = []
+    should_stop = False
 
     # 当评论数大于3000条时限制爬取评论的页数
     try:
@@ -33,21 +33,38 @@ def get_comments_pool(xc: XieCheng, console: Console, _index: int) -> list:
         console.print(f"获取景区评论数据返回数据异常，{e}", style="bold red")
         comment_total = 0
     console.print(f"正在爬取[yellow]{xc.scene_list[_index]['name']}[/yellow]的评论数据，预计爬取{comment_total}页的数据", style="bold green")
+
+    # 使用字典来跟踪任务和页码的对应关系
+    future_to_page = {}
     try:
         for index in range(1, comment_total):
-            thread = threadPool.submit(xc.get_scene_comments, xc.scene_list[_index]["resourceId"], index, PAGESIZE)
-            thread_list.append(thread)
+            future = threadPool.submit(xc.get_scene_comments, xc.scene_list[_index]["resourceId"], index, PAGESIZE)
+            future_to_page[future] = index
 
-        for mission in as_completed(thread_list):
+        for future in as_completed(future_to_page):
+            if should_stop:
+                # 已经遇到空数据，跳过剩余任务的结果处理
+                continue
+            page_num = future_to_page[future]
             try:
-                result = mission.result()
-                if result["result"]["items"]:
+                result = future.result()
+                if result and result.get("result", {}).get("items"):
                     comments_list.extend(result["result"]["items"])
+                elif result:
+                    # 返回成功但items为空，说明已经没有更多数据了
+                    console.print(f"[yellow]第{page_num}页返回数据为空，停止爬取后续页面[/yellow]")
+                    should_stop = True
             except TypeError as e:
-                console.print(f"获取评论的接口返回数据异常，{e},{result}，", style="bold red")
+                console.print(f"[red]第{page_num}页返回数据格式异常: {e}[/red]", style="bold red")
+            except Exception as e:
+                console.print(f"[red]第{page_num}页处理异常: {e}[/red]", style="bold red")
     except Exception as e:
         console.print(f"线程池出现问题，{e}", style="bold red")
+    finally:
+        threadPool.shutdown(wait=False)
+
     if not comments_list:
         console.print(f"[red]爬取[yellow]{xc.scene_list[_index]['name']}[/yellow]景区评论失败[/red]", style="bold green")
-        return  []
+        return []
+    console.print(f"[green]共爬取{len(comments_list)}条评论数据[/green]")
     return comments_list

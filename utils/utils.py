@@ -59,7 +59,7 @@ def create_directories(data: dict, parent_path='') -> None:
 def create_file() -> None:
     script_path = os.path.abspath(__file__)
     grandparent_dir = os.path.dirname(os.path.dirname(script_path))
-    create_directories(jsonFileToDate("city.json"), grandparent_dir + "\\data")
+    create_directories(jsonFileToDate("city.json"), os.path.join(grandparent_dir, "data"))
 
 
 def get_is_exist(scene_name: str, city_name: str, province: str) -> bool:

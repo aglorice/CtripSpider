@@ -194,10 +194,11 @@ class XieCheng:
                     "is_free": result["isFree"],
                 }
                 self.scene_list.append(scene_info)
+                self.console.print(scene_info)
                 try:
                     script_path = os.path.abspath(__file__)
                     grandparent_dir = os.path.dirname(os.path.dirname(script_path))
-                    path_file = os.path.join(grandparent_dir, f"data\{province}\{city}\{city_scene_name}")
+                    path_file = os.path.join(grandparent_dir, "data", province, city, city_scene_name)
                     os.makedirs(path_file, exist_ok=True)
                     dateToJsonFileSceneInfo(scene_info, path_file)
                 except Exception as e:
@@ -265,9 +266,24 @@ class XieCheng:
                 timeout=TIME_OUT
             )
         except Exception as e:
-            self.console.print(f"[red]获取景点评论第{page_index}页失败,你可以检查你的网路或者代理[/red]")
+            self.console.print(f"[red]获取景点评论第{page_index}页失败,网络请求异常: {e}[/red]")
             return []
-        return res.json()
+
+        # 检查HTTP状态码
+        if res.status_code != 200:
+            self.console.print(f"[red]获取景点评论第{page_index}页失败,HTTP状态码: {res.status_code}[/red]")
+            self.console.print(f"[red]返回内容前500字符: {res.text[:500]}[/red]")
+            return []
+
+        # 尝试解析JSON
+        try:
+            return res.json()
+        except json.JSONDecodeError as e:
+            self.console.print(f"[red]获取景点评论第{page_index}页失败,JSON解析错误: {e}[/red]")
+            self.console.print(f"[red]HTTP状态码: {res.status_code}[/red]")
+            self.console.print(f"[red]返回内容前500字符: {res.text[:500]}[/red]")
+            self.console.print(f"[red]请求头: {dict(res.request.headers)}[/red]")
+            return []
 
     def generate_scene_comments_params(self) -> dict:
         """

@@ -1,5 +1,5 @@
 # 爬取指定身份内的所有地区景点的评论数据
-AREAS = ['云南']
+AREAS = ['四川']
 
 # 爬取评论时每页的数据
 PAGESIZE = 20
@@ -26,7 +26,7 @@ CITY_SLEEP_TIME = 10
 SCENE_SLEEP_TIME = 10
 
 # 线程池数量
-POOL_NUMBER = 50
+POOL_NUMBER =1
 
 # 请求超时时间
 TIME_OUT = 5

@@ -20,7 +20,7 @@ def generate_excel(province: str, city: str, scene_name: str, comment: list, con
     fail_count = 0
     script_path = os.path.abspath(__file__)
     grandparent_dir = os.path.dirname(os.path.dirname(script_path))
-    path_file = os.path.join(grandparent_dir, f"data\{province}\{city}\{scene_name}")
+    path_file = os.path.join(grandparent_dir, "data", province, city, scene_name)
 
     # 创建景区文件夹
     os.makedirs(path_file, exist_ok=True)
